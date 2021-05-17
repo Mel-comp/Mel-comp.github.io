@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; /*int padding et margin dans la taille des balises*/
+
+}
+/*Passer d'une base 16 à une base 12*/
+
+
+/*Taille image s'adaptant à l'écran*/
+
+img{
+    max-width: 100%;
+    
+}
+a{
+    color: inherit;
+}
+a:not([target="_blank"]){
+    text-decoration: none;
+}
+
+/*Gestion formulaire*/
+
+
+
+/**/

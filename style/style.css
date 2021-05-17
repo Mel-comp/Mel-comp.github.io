@@ -1,0 +1,401 @@
+/* Typographies */
+
+@font-face {
+  font-family: 'Marianne_Bold';
+  src: url('/font/Marianne/fontes_web/Marianne-Bold.woff2') format('woff2'),
+    url('/font/Marianne/fontes_web/Marianne-Bold.woff') format('woff');
+  font-family: 'Marianne_Medium';
+  src: url('/font/Marianne/fontes_web/Marianne-Medium.woff2') format('woff2'),
+    url('/font/Marianne/fontes_web/Marianne-Medium.woff') format('woff');
+  font-family: 'Marianne_Regular';
+  src: url('/font/Marianne/fontes_web/Marianne_Regular.woff2') format('woff2'),
+    url('/font/Marianne/fontes_web/Marianne_Regular.woff') format('woff');
+}
+
+/* Variables*/
+:root {
+  /* Couleurs */
+  --blue-link: #000091;
+  /* Box Shadow */
+  --box-shadow-1: 0px 2px 25px rgba(0, 0, 0, 0.1);
+}
+/* Body */
+body {
+  font-family: 'Marianne';
+
+  /* Quand le générateur était au milieu
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;*/
+}
+.hidden {
+  overflow: hidden;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 24px;
+}
+p {
+  font-size: 1.125em;
+}
+button {
+  color: var(--blue-link);
+  font-size: 1em;
+}
+nav {
+  width: 100%;
+  padding: 12px 152px 24px 152px;
+  background: fff;
+}
+nav section {
+  width: 100%;
+  position: relative;
+  margin-left: -12px;
+}
+nav img {
+  height: 80px;
+  width: auto;
+}
+#bann {
+  background-image: url('../img/Banniere.png');
+  background-size: cover;
+  height: 240px;
+  position: relative;
+}
+
+#bann h1 {
+  position: absolute;
+  left: 152px;
+  bottom: 48px;
+  font-weight: 500;
+  font-size: 1.75em;
+  width: calc(100% - 304px);
+}
+#bann span {
+  font-weight: 700;
+}
+#generateur-de-reve {
+  display: flex;
+  width: calc(100%-304px);
+  min-height: 323px;
+  box-shadow: var(--box-shadow-1);
+  background: #fff;
+  margin: 48px 152px 0 152px;
+}
+#section-titre {
+  width: 50%;
+  padding: 32px 32px 32px 48px;
+  background: #eae6fb;
+}
+#section-form {
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 50%;
+}
+label {
+  font-family: 'Marianne Medium';
+  font-size: 1.25em;
+}
+#input-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  background: #faf9ff;
+  padding: 12px 40px 12px 24px;
+  width: calc((100% - 32px) / 3);
+  border: 0;
+  margin-bottom: 40px;
+  margin-top: 16px;
+  font-size: 0.875;
+  color: #000;
+}
+#envoyer {
+  background: #0f0033;
+  font-family: 'Marianne Medium';
+  font-size: 1.125em;
+  color: white;
+  padding: 12px 40px 12px 24px;
+  margin-bottom: 40px;
+  border: 0;
+  width: inherit;
+}
+#mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.derriere {
+  z-index: -100;
+}
+.devant {
+  z-index: 100;
+}
+.translate-disable {
+  transform: translateX(100vw);
+}
+.translate-active {
+  animation: 1s ease-in-out apparition;
+}
+
+#dream-section-wrapper {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background: #cabcf7;
+  position: relative;
+}
+/*
+section-reve-desable{
+    top:0;
+    left: 100vw;
+}
+.section-reve-active{
+    top: 0;
+    left: 0;
+    animation: 1s ease-in-out apparition;
+}
+*/
+.fond-violet {
+  background: #0d0131;
+}
+#eye {
+  width: 100vw;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.blink-on {
+  animation: 2s ease-in-out apparition_eye;
+  height: initial;
+}
+.blink-off {
+  height: 100vh;
+}
+#section-reve {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+#dream-picture {
+  width: 100%;
+  height: auto;
+}
+
+/* Pop-in */
+
+.pop-in {
+  width: 746px;
+  padding: 16px 32px 40px 32px;
+  position: fixed;
+  left: calc((100% - 746px) / 2);
+  background: #ffffff;
+  box-shadow: var(--box-shadow-1);
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+}
+.pop-in-out {
+  bottom: -300px;
+}
+.pop-in-open {
+  animation: 1s ease-in-out apparition_position;
+  bottom: 24px;
+}
+.pop-in-close {
+  animation: 1s ease-in-out apparition_position_inverser;
+  bottom: -300px;
+}
+.button-close {
+  margin-left: auto;
+  padding-bottom: 8px;
+}
+.button-close:hover {
+  cursor: pointer;
+}
+.button-close::after {
+  content: '';
+  background-image: url(../img/Fermer.png);
+  background-size: 10px;
+  display: inline-block;
+  margin-left: 12px;
+  width: 10px;
+  height: 10px;
+}
+
+.pop-in button {
+  margin-left: auto;
+  background: none;
+  border: 0px;
+  color: var(--blue-link);
+}
+.pop-in h1 {
+  font-size: 1.375em;
+}
+.pop-in h1::before {
+  content: '';
+  background-image: url(../img/Fleche.png);
+  background-size: 20px;
+  display: inline-block;
+  margin-right: 16px;
+  width: 20px;
+  height: 20px;
+}
+.title-pop-in {
+  margin-bottom: 8px;
+}
+.pop-in p {
+  font-size: 1em;
+}
+
+/*Animation*/
+
+@-webkit-keyframes apparition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes apparition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@-webkit-keyframes apparition_position {
+  0% {
+    bottom: -300px;
+  }
+  100% {
+    bottom: 24px;
+  }
+}
+@keyframes apparition_position {
+  0% {
+    bottom: -300px;
+  }
+  100% {
+    bottom: 24px;
+  }
+}
+
+@-webkit-keyframes apparition_position_inverser {
+  0% {
+    bottom: 24px;
+  }
+  100% {
+    bottom: -300px;
+  }
+}
+
+@keyframes apparition_position_inverser {
+  0% {
+    bottom: 24px;
+  }
+  100% {
+    bottom: -300px;
+  }
+}
+
+@-webkit-keyframes eye {
+  0% {
+    height: 100vh;
+  }
+  33% {
+    height: 200vh;
+  }
+  66% {
+    height: 120vh;
+  }
+  100% {
+    height: initial;
+  }
+}
+
+@keyframes eye {
+  0% {
+    height: 100vh;
+  }
+  33% {
+    height: 200vh;
+  }
+  66% {
+    height: 120vh;
+  }
+  100% {
+    height: initial;
+  }
+}
+
+/*Media Queries*/
+
+@media (max-width: 1024px) {
+  body {
+    padding-bottom: 40px;
+  }
+  nav {
+    padding: 12px 64px 24px 64px;
+  }
+  #bann {
+    background-size: contain;
+  }
+  #bann h1 {
+    left: 64px;
+  }
+  #generateur-de-reve {
+    flex-direction: column;
+    width: calc(100%-128px);
+    margin: 48px 64px 0 64px;
+    height: auto;
+  }
+  #section-titre {
+    width: 100%;
+  }
+  #section-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  nav {
+    padding: 12px 24px 24px 24px;
+  }
+  #bann h1 {
+    left: 24px;
+    width: calc(100% - 48px);
+  }
+  #generateur-de-reve {
+    flex-direction: column;
+    width: calc(100%-128px);
+    margin: 48px 24px 0 24px;
+    height: auto;
+  }
+  #input-form {
+    flex-direction: column;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  :nth-last-of-type(input) {
+    margin-bottom: 0;
+  }
+}
+
+/*En gros il faut que ta class elle soit sur l'élément qui bouge*/

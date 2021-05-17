@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      href="https://www.gouvernement.fr/sites/all/themes/custom/gouvernement/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>Fais moi rêver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="style/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="style/style.css"
+    />
+  </head>
+  <body id="body">
+    <nav>
+      <section>
+        <img src="img/Logo.png" alt="Logo Fais Moi Rêver" />
+      </section>
+      <!-- <ul>
+            <li>Actualité</li>
+            <li>Mieux réussir à dormir</li>
+        </ul>-->
+    </nav>
+    <section id="bann">
+      <h1>
+        Bienvenue sur <span>Fais Moi Rêver</span>,<br />
+        le site de l’état qui vous permet de vous évader.
+      </h1>
+    </section>
+    <section id="generateur-de-reve">
+      <section id="section-titre">
+        <h2>Le générateur de rêve</h2>
+        <p>
+          Le gouvernement a mit en place ce générateur dans le but de vous aider
+          à mieux vivre votre quotidien. Vous n’avez plus besoin de vous
+          embarasser à dormir durant de longues périodes. Économisez du temps de
+          sommeil grâce à ce générateur pour retourner à vos occupations.
+        </p>
+      </section>
+      <section id="section-form">
+        <form action="#" id="formulaire">
+          <label for="mot-cle">Résumez votre journée en 1 mot</label>
+
+          <section id="input-form">
+            <input
+              type="text"
+              name="mot-cle"
+              id="mot-cle"
+              placeholder="premier mot"
+            />
+            <input
+              type="text"
+              name="mot-cle-2"
+              id="mot-cle-2"
+              placeholder="second mot"
+            />
+            <input
+              type="text"
+              name="mot-cle-3"
+              id="mot-cle-3"
+              placeholder="troisième mot"
+            />
+          </section>
+          <button id="envoyer" type="submit">Générer mon rêve</button>
+        </form>
+      </section>
+    </section>
+    <div id="mask" class="derriere">
+      <section
+        id="dream-section-wrapper"
+        class="section-reve-desable translate-disable"
+      >
+        <img src="img/Oeil-grand.png" alt="" id="eye" />
+        <section id="section-reve">
+          <img src="" alt="" id="dream-picture" />
+        </section>
+      </section>
+    </div>
+    <div id="pop-in" class="pop-in pop-in-out">
+      <div class="button-close" onclick="fermer()">
+        <button>Fermer</button>
+      </div>
+      <div class="text-pop-ins">
+        <div class="title-pop-in">
+          <h1>Titre de la modale</h1>
+        </div>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
+          ratione quisquam harum in dolores ad odit accusamus eveniet et
+          repudiandae illum officiis, pariatur deserunt distinctio unde nostrum
+          aperiam delectus blanditiis?
+        </p>
+      </div>
+    </div>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
