@@ -21,7 +21,7 @@
 }
 /* Body */
 body {
-  font-family: 'Marianne';
+  font-family: 'Marianne', 'Arial';
 
   /* Quand le générateur était au milieu
     
@@ -97,7 +97,7 @@ nav img {
   width: 50%;
 }
 label {
-  font-family: 'Marianne Medium';
+  font-family: 'Marianne Medium', 'Arial';
   font-size: 1.25em;
 }
 #input-form {
@@ -117,7 +117,7 @@ input {
 }
 #envoyer {
   background: #0f0033;
-  font-family: 'Marianne Medium';
+  font-family: 'Marianne Medium', 'Arial';
   font-size: 1.125em;
   color: white;
   padding: 12px 40px 12px 24px;
