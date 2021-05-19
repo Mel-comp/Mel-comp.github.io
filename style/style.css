@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: 'Marianne_Bold';
-  src: url('../font/Marianne/fontes_web/Marianne-Bold.woff2') format('woff2'),
-    url('../font/Marianne/fontes_web/Marianne-Bold.woff') format('woff');
+  src: url('../font/Marianne/fontes-web/Marianne-Bold.woff2') format('woff2'),
+    url('../font/Marianne/fontes-web/Marianne-Bold.woff') format('woff');
   font-family: 'Marianne_Medium';
-  src: url('../font/Marianne/fontes_web/Marianne-Medium.woff2') format('woff2'),
-    url('../font/Marianne/fontes_web/Marianne-Medium.woff') format('woff');
+  src: url('../font/Marianne/fontes-web/Marianne-Medium.woff2') format('woff2'),
+    url('../font/Marianne/fontes-web/Marianne-Medium.woff') format('woff');
   font-family: 'Marianne_Regular';
-  src: url('../font/Marianne/fontes_web/Marianne_Regular.woff2') format('woff2'),
-    url('../font/Marianne/fontes_web/Marianne_Regular.woff') format('woff');
+  src: url('../font/Marianne/fontes-web/Marianne_Regular.woff2') format('woff2'),
+    url('../font/Marianne/fontes-web/Marianne_Regular.woff') format('woff');
 }
 
 /* Variables*/
