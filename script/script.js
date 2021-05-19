@@ -65,7 +65,7 @@ function fermer() {
 async function getImages(e) {
   e.preventDefault();
 
-  const inputs = [e.target['0'].value]; //.value, e.target['0'].value, e.target['1'].value, e.target['1'].value, e.target['2'].value];
+  const inputs = [e.target['0'].value, e.target['0'].value, e.target['1'].value, e.target['1'].value, e.target['2'].value];
   let photos = [];
 
   await Promise.all(
