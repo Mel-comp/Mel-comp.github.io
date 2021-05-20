@@ -29,6 +29,9 @@ function show_picture(photos) {
   const mask = document.getElementById('mask');
   const body = document.getElementById('body');
   const section = document.getElementById('dream-section-wrapper');
+  const eye = document.getElementById('eye');
+  const image = document.getElementById('dream-picture');
+  const mask_picture = document.getElementById('mask-picture');
 
   // const image = document.getElementById("eye");
   body.classList.add('hidden');
@@ -38,15 +41,21 @@ function show_picture(photos) {
   mask.classList.remove('derriere');
 
   setTimeout(async () => {
-    // image.classList.add("blink-off");
-    // image.classList.add("blink-on");
+    eye.classList.remove("blink-off");
+    eye.classList.add("blink-on");
+    mask_picture.classList.remove("opacity-off");
+    mask_picture.classList.add("opacity-on");
     photos = shuffle(photos);
     for (photo of photos) {
-      document.getElementById('dream-picture').src = photo.src.large2x;
+      image.src = photo.src.large2x;
       await delay(300);
     }
 
     show_popin();
+    mask_picture.classList.remove("opacity-on");
+    mask_picture.classList.add("opacity-close");
+    eye.classList.remove("blink-on");
+    eye.classList.add("blink-end");
   }, 1000);
 }
 
@@ -65,7 +74,7 @@ function fermer() {
 async function getImages(e) {
   e.preventDefault();
 
-  const inputs = [e.target['0'].value, e.target['0'].value, e.target['1'].value, e.target['1'].value, e.target['2'].value];
+  const inputs = [e.target['0'].value]//, e.target['0'].value, e.target['1'].value, e.target['1'].value, e.target['2'].value];
   let photos = [];
 
   await Promise.all(

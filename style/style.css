@@ -16,6 +16,8 @@
 :root {
   /* Couleurs */
   --blue-link: #000091;
+  --purple: #0d0131;
+  --pink: #cabcf7;
   /* Box Shadow */
   --box-shadow-1: 0px 2px 25px rgba(0, 0, 0, 0.1);
 }
@@ -116,7 +118,7 @@ input {
   color: #000;
 }
 #envoyer {
-  background: #0f0033;
+  background: var(--purple);
   font-family: 'Marianne Medium', 'Arial';
   font-size: 1.125em;
   color: white;
@@ -149,7 +151,7 @@ input {
   height: 100vh;
   width: 100vw;
   text-align: center;
-  background: #cabcf7;
+  background: var(--purple);
   position: relative;
 }
 /*
@@ -164,7 +166,26 @@ section-reve-desable{
 }
 */
 .fond-violet {
-  background: #0d0131;
+  background: var(--purple);
+}
+#mask-picture{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--purple);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.opacity-off{
+  opacity: 100%;
+}
+.opacity-on{
+  animation: 2s ease-in-out dream;
+  opacity: 0%;
+}
+.opacity-close{
+  animation: 2s ease-in-out dream_end;
+  opacity: 100%;
 }
 #eye {
   width: 100vw;
@@ -174,13 +195,19 @@ section-reve-desable{
   left: 0;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+
 }
+
 .blink-on {
-  animation: 2s ease-in-out apparition_eye;
-  height: initial;
+  animation: 2s ease-in-out eye;
+  max-height: 12000px;
 }
 .blink-off {
-  height: 100vh;
+  max-height: 120vh;
+}
+.blink-end {
+  animation: 2s ease-in-out eye_end;
+  max-height: 120vh;
 }
 #section-reve {
   width: 100vw;
@@ -196,10 +223,10 @@ section-reve-desable{
 /* Pop-in */
 
 .pop-in {
-  width: 746px;
+  width: 60%;
   padding: 16px 32px 40px 32px;
   position: fixed;
-  left: calc((100% - 746px) / 2);
+  left: 20%;
   background: #ffffff;
   box-shadow: var(--box-shadow-1);
   display: flex;
@@ -211,6 +238,7 @@ section-reve-desable{
 }
 .pop-in-open {
   animation: 1s ease-in-out apparition_position;
+
   bottom: 24px;
 }
 .pop-in-close {
@@ -315,34 +343,74 @@ section-reve-desable{
 
 @-webkit-keyframes eye {
   0% {
-    height: 100vh;
-  }
-  33% {
-    height: 200vh;
-  }
-  66% {
-    height: 120vh;
+    max-height: 120vh;
   }
   100% {
-    height: initial;
+    max-height: 12000px;
   }
 }
 
 @keyframes eye {
   0% {
-    height: 100vh;
-  }
-  33% {
-    height: 200vh;
-  }
-  66% {
-    height: 120vh;
+    max-height: 120vh;
   }
   100% {
-    height: initial;
+    max-height: 12000px;
+  }
+}
+@-webkit-keyframes eye_end {
+  0% {
+    max-height: 12000px;
+  }
+  100% {
+    max-height: 120vh;
   }
 }
 
+@keyframes eye_end {
+  0% {
+    max-height: 12000px;
+  }
+  100% {
+    max-height: 120vh;
+  }
+}
+@-webkit-keyframes dream {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes dream {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+@-webkit-keyframes dream_end {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    
+  }
+}
+
+@keyframes dream_end {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    
+  }
+}
 /*Media Queries*/
 
 @media (max-width: 1024px) {
@@ -396,6 +464,13 @@ section-reve-desable{
   :nth-last-of-type(input) {
     margin-bottom: 0;
   }
+  .pop-in {
+    width: 80%;
+    left: 10%;
+  }  
+  .pop-in-out {
+    bottom: -500px;
+  }
 }
 
-/*En gros il faut que ta class elle soit sur l'élément qui bouge*/
+
