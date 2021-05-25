@@ -1,5 +1,13 @@
 const form = document.querySelector('form');
 
+const photos_com =  
+{
+    "src": {
+      "large2x":["img/macron/vaccin-castex.webp", "img/macron/macron-brigitte.jpeg", "img/macron/macron-coktail.webp", "img/macron/macron-siege.jpeg", "img/macron/vaccin-veran.jpeg", "img/macron/macron-siege.jpegimg/macron/vaccin-veran.jpeg", "img/macron/vaccin-roselyn.jpeg" ] 
+    }
+} 
+
+
 function getRequestUrl(input) {
   return `https://api.pexels.com/v1/search?query=${input}&per_page=20&locale=fr-FR`;
 }
@@ -39,16 +47,17 @@ function show_picture(photos) {
   section.classList.add('translate-active');
   mask.classList.add('devant');
   mask.classList.remove('derriere');
-
+  
   setTimeout(async () => {
     eye.classList.remove("blink-off");
     eye.classList.add("blink-on");
     mask_picture.classList.remove("opacity-off");
     mask_picture.classList.add("opacity-on");
     photos = shuffle(photos);
+    console.log(photos);
     for (photo of photos) {
       image.src = photo.src.large2x;
-      await delay(300);
+      await delay(500);
     }
 
     show_popin();
@@ -74,7 +83,7 @@ function fermer() {
 async function getImages(e) {
   e.preventDefault();
 
-  const inputs = [e.target['0'].value, e.target['0'].value, e.target['1'].value, e.target['1'].value, e.target['2'].value];
+  const inputs = [e.target['0'].value, e.target['0'].value, e.target['1'].value, e.target['1'].value, e.target['2'].value, e.target['2'].value];
   let photos = [];
 
   await Promise.all(
@@ -92,9 +101,11 @@ async function getImages(e) {
 
       const response = await data.json();
       photos.push(...response.photos);
+      console.log(response.photos);
+      photos.push(photos_com);
     })
   );
-
+ 
   photos = shuffle(photos);
   show_picture(photos);
 }
