@@ -80,7 +80,6 @@ function show_picture(photos) {
     mask_picture.classList.remove("opacity-off");
     mask_picture.classList.add("opacity-on");
     photos = shuffle(photos);
-    console.log(photos);
     for (photo of photos) {
       image.src = photo.src.large2x;
       await delay(500);
