@@ -1,11 +1,37 @@
 const form = document.querySelector('form');
 
-const photos_com =  
-{
-    "src": {
-      "large2x":["img/macron/vaccin-castex.webp", "img/macron/macron-brigitte.jpeg", "img/macron/macron-coktail.webp", "img/macron/macron-siege.jpeg", "img/macron/vaccin-veran.jpeg", "img/macron/macron-siege.jpegimg/macron/vaccin-veran.jpeg", "img/macron/vaccin-roselyn.jpeg" ] 
-    }
-} 
+const photos_com = [
+  {
+    src: {
+      large2x: "img/macron/vaccin-castex.webp",
+    },
+  },
+  {
+    src: {
+      large2x: "img/macron/macron-brigitte.jpeg",
+    },
+  },
+  {
+    src: {
+      large2x: "img/macron/macron-coktail.webp",
+    },
+  },
+  {
+    src: {
+      large2x: "img/macron/macron-siege.jpeg",
+    },
+  },
+  {
+    src: {
+      large2x: "img/macron/vaccin-veran.jpeg",
+    },
+  },
+  {
+    src: {
+      large2x: "img/macron/vaccin-roselyn.jpeg",
+    },
+  },
+];
 
 
 function getRequestUrl(input) {
@@ -101,12 +127,10 @@ async function getImages(e) {
 
       const response = await data.json();
       photos.push(...response.photos);
-      console.log(response.photos);
-      photos.push(photos_com);
     })
   );
  
-  photos = shuffle(photos);
+  photos = shuffle([...photos, ...photos_com]);
   show_picture(photos);
 }
 
