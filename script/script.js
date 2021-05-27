@@ -3,32 +3,32 @@ const form = document.querySelector('form');
 const photos_com = [
   {
     src: {
-      large: "img/macron/vaccin-castex.webp",
+      large2x: "img/macron/vaccin-castex.webp",
     },
   },
   {
     src: {
-      large: "img/macron/macron-brigitte.jpeg",
+      large2x: "img/macron/macron-brigitte.jpeg",
     },
   },
   {
     src: {
-      large: "img/macron/macron-coktail.webp",
+      large2x: "img/macron/macron-coktail.webp",
     },
   },
   {
     src: {
-      large: "img/macron/macron-siege.jpeg",
+      large2x: "img/macron/macron-siege.jpeg",
     },
   },
   {
     src: {
-      large: "img/macron/vaccin-veran.jpeg",
+      large2x: "img/macron/vaccin-veran.jpeg",
     },
   },
   {
     src: {
-      large: "img/macron/vaccin-roselyn.jpeg",
+      large2x: "img/macron/vaccin-roselyn.jpeg",
     },
   },
 ];
@@ -81,8 +81,8 @@ function show_picture(photos) {
     mask_picture.classList.add("opacity-on");
     photos = shuffle(photos);
     for (photo of photos) {
-      image.src = photo.src.large;
-      await delay(500);
+      image.src = photo.src.large2x;
+      await delay(900);
     }
 
     show_popin();
